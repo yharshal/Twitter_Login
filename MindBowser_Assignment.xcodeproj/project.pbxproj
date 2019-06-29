@@ -97,9 +97,9 @@
 			isa = PBXGroup;
 			children = (
 				F8AC112122C7593C00029AF5 /* Business */,
+				F8AC111422C7545B00029AF5 /* Model */,
 				F8AC111622C7546F00029AF5 /* Views */,
 				F8AC111522C7546300029AF5 /* Controller */,
-				F8AC111422C7545B00029AF5 /* Model */,
 				F8AC110222C74F9D00029AF5 /* AppDelegate.swift */,
 				F8AC110B22C74F9F00029AF5 /* LaunchScreen.storyboard */,
 				F8AC111D22C7550A00029AF5 /* Assets.xcassets */,
@@ -118,8 +118,8 @@
 		F8AC111522C7546300029AF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F8AC112E22C7838B00029AF5 /* UserProfile */,
 				F8AC112D22C7837300029AF5 /* Login */,
+				F8AC112E22C7838B00029AF5 /* UserProfile */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,10 +162,9 @@
 		F8AC112E22C7838B00029AF5 /* UserProfile */ = {
 			isa = PBXGroup;
 			children = (
-				F8AC111922C754A700029AF5 /* UserDetailsCollectionViewCell.swift */,
-				F8AC112B22C7836600029AF5 /* ProfileHeaderView.swift */,
-				F8AC112922C7835300029AF5 /* StreachyProfileHeaderLayout.swift */,
 				F8AC112722C7834100029AF5 /* ProfileViewController.swift */,
+				F8AC113522C7869800029AF5 /* Cells */,
+				F8AC113622C786A600029AF5 /* CustomLayout */,
 			);
 			path = UserProfile;
 			sourceTree = "<group>";
@@ -185,6 +184,23 @@
 				F8AC111F22C7593300029AF5 /* ApiManager.swift */,
 			);
 			path = ApiManager;
+			sourceTree = "<group>";
+		};
+		F8AC113522C7869800029AF5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC112B22C7836600029AF5 /* ProfileHeaderView.swift */,
+				F8AC111922C754A700029AF5 /* UserDetailsCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F8AC113622C786A600029AF5 /* CustomLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC112922C7835300029AF5 /* StreachyProfileHeaderLayout.swift */,
+			);
+			path = CustomLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
