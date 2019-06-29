@@ -37,38 +37,12 @@ class ProfileViewController: UIViewController {
         self.getUserInfo()
     }
     
+    
+    
+    
     fileprivate func getUserInfo() {
         self.userDetails = UserDetails()
         
-        let client = TWTRAPIClient.withCurrentUser()
-        client.requestEmail { email, error in
-            if (email != nil) {
-                let recivedEmailID = email ?? ""
-                self.userDetails?.emailID = recivedEmailID
-                print(recivedEmailID)
-            } else {
-                print("error--: \(String(describing: error?.localizedDescription))");
-            }
-        }
-        //To get profile image url and screen name
-        let twitterClient = TWTRAPIClient(userID: session.userID)
-        twitterClient.loadUser(withID: session.userID) {(user, error) in
-            if let user = user {
-                self.userDetails?.profileURL = user.profileURL.absoluteString
-                self.userDetails?.userName = user.screenName
-                self.userDetails?.timelineURL = user.profileImageLargeURL
-            }
-            self.refreshView()
-        }
-        let _ = client.requestEmail { email, error in
-            if (email != nil) {
-                let recivedEmailID = email ?? ""
-                self.userDetails?.emailID = recivedEmailID
-                self.refreshView()
-            }else {
-                print("error--: \(String(describing: error?.localizedDescription))");
-            }
-        }
     }
     
     

@@ -29,18 +29,28 @@ class LoginViewController: UIViewController {
     
     func getAccessToken() {
         ApiManager.shared.getAccessToken(with: { (statusCode, data) in
-            if let data = data {
-                do
-                {
-                    let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
-                    print(json)
-                    
-                } catch {
-                    self.showMessage("Access Token JSON error::-", error.localizedDescription)
+            if statusCode == 200 {
+                if let data = data {
+                    do
+                    {
+                        let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
+                        print("-----Access Token JSON::- -------\n",json)
+                        if let accessTokenType = json["token_type"] as? String, let accessToken = json["access_token"] as? String {
+                            UserDefaults.standard.set("\(accessTokenType) \(accessToken)", forKey: StringConstants.kAccessTokenKey)
+                            UserDefaults.standard.synchronize()
+                            let profile = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+                            self.navigationController?.pushViewController(profile, animated: true)
+                        }
+                    } catch {
+                        self.showMessage("Login Failed", error.localizedDescription)
+                    }
                 }
+            } else {
+                self.showMessage("Login Failed", "Failed with status code::- \(statusCode!)")
             }
         }) { (errorString) in
             print(errorString!)
+            self.showMessage("Login Failed", "Failed with status error::- \(errorString!)")
         }
     }
     
