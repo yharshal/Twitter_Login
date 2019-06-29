@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TwitterKit
 
 class LoginViewController: UIViewController {
     
@@ -17,19 +18,31 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnTwitterLoginTapped(_ sender: UIButton) {
+        TWTRTwitter.sharedInstance().logIn { (session, error) in
+            if let err = error {
+                self.showMessage("Login Failed", err.localizedDescription)
+            } else {
+                self.getAccessToken()
+            }
+        }
+    }
+    
+    func getAccessToken() {
         ApiManager.shared.getAccessToken(with: { (statusCode, data) in
             if let data = data {
                 do
                 {
                     let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
                     print(json)
+                    
                 } catch {
-                    print(error.localizedDescription)
+                    self.showMessage("Access Token JSON error::-", error.localizedDescription)
                 }
             }
         }) { (errorString) in
             print(errorString!)
         }
     }
+    
 }
 

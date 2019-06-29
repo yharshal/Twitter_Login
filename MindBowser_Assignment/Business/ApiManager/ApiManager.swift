@@ -24,9 +24,7 @@ class ApiManager {
         let loginString = "\(StringConstants.kConsumerKey):\(StringConstants.kConsumerSecret)"
         let loginData = loginString.data(using: .utf8)
         return (loginData?.base64EncodedString())!
-    }
-    
-    
+    }    
     
     func getAccessToken(with successHandler: @escaping ((_ statusCode:Int?, _ data: Data?) -> ()), errorHandler: @escaping (_ error: String?) -> ()) {
         

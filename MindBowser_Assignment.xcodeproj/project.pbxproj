@@ -3,13 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		E82D22897030080E03C3EFA6 /* Pods_MindBowser_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2351088DF2D4FBB66DF5A97A /* Pods_MindBowser_Assignment.framework */; };
 		F8AC110322C74F9E00029AF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC110222C74F9D00029AF5 /* AppDelegate.swift */; };
-		F8AC110522C74F9E00029AF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC110422C74F9E00029AF5 /* ViewController.swift */; };
 		F8AC110D22C74F9F00029AF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8AC110B22C74F9F00029AF5 /* LaunchScreen.storyboard */; };
 		F8AC111822C7549700029AF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC111722C7549700029AF5 /* LoginViewController.swift */; };
 		F8AC111A22C754A700029AF5 /* UserDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC111922C754A700029AF5 /* UserDetailsCollectionViewCell.swift */; };
@@ -18,6 +17,11 @@
 		F8AC112022C7593300029AF5 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC111F22C7593300029AF5 /* ApiManager.swift */; };
 		F8AC112422C75A1100029AF5 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC112322C75A1100029AF5 /* ApiConstants.swift */; };
 		F8AC112622C75A5100029AF5 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC112522C75A5100029AF5 /* StringConstants.swift */; };
+		F8AC112822C7834100029AF5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC112722C7834100029AF5 /* ProfileViewController.swift */; };
+		F8AC112A22C7835300029AF5 /* StreachyProfileHeaderLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC112922C7835300029AF5 /* StreachyProfileHeaderLayout.swift */; };
+		F8AC112C22C7836700029AF5 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC112B22C7836600029AF5 /* ProfileHeaderView.swift */; };
+		F8AC113122C783E300029AF5 /* Ext-UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC113022C783E300029AF5 /* Ext-UIImageView.swift */; };
+		F8AC113322C784C900029AF5 /* Ext-UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC113222C784C900029AF5 /* Ext-UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +30,6 @@
 		99B68F0B640A0FDB08E64CA8 /* Pods-MindBowser_Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindBowser_Assignment.debug.xcconfig"; path = "Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		F8AC10FF22C74F9D00029AF5 /* MindBowser_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindBowser_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AC110222C74F9D00029AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8AC110422C74F9E00029AF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F8AC110C22C74F9F00029AF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8AC110E22C74F9F00029AF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8AC111722C7549700029AF5 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +39,11 @@
 		F8AC111F22C7593300029AF5 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		F8AC112322C75A1100029AF5 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		F8AC112522C75A5100029AF5 /* StringConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		F8AC112722C7834100029AF5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F8AC112922C7835300029AF5 /* StreachyProfileHeaderLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreachyProfileHeaderLayout.swift; sourceTree = "<group>"; };
+		F8AC112B22C7836600029AF5 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		F8AC113022C783E300029AF5 /* Ext-UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-UIImageView.swift"; sourceTree = "<group>"; };
+		F8AC113222C784C900029AF5 /* Ext-UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +72,6 @@
 				99B68F0B640A0FDB08E64CA8 /* Pods-MindBowser_Assignment.debug.xcconfig */,
 				8D6F44C88FED3216DCD18701 /* Pods-MindBowser_Assignment.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -111,9 +118,8 @@
 		F8AC111522C7546300029AF5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F8AC110422C74F9E00029AF5 /* ViewController.swift */,
-				F8AC111922C754A700029AF5 /* UserDetailsCollectionViewCell.swift */,
-				F8AC111722C7549700029AF5 /* LoginViewController.swift */,
+				F8AC112E22C7838B00029AF5 /* UserProfile */,
+				F8AC112D22C7837300029AF5 /* Login */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -129,8 +135,9 @@
 		F8AC112122C7593C00029AF5 /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				F8AC113422C785FF00029AF5 /* ApiManager */,
+				F8AC112F22C783B700029AF5 /* Utils */,
 				F8AC112222C7595700029AF5 /* Constants */,
-				F8AC111F22C7593300029AF5 /* ApiManager.swift */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -142,6 +149,42 @@
 				F8AC112522C75A5100029AF5 /* StringConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		F8AC112D22C7837300029AF5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC111722C7549700029AF5 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F8AC112E22C7838B00029AF5 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC111922C754A700029AF5 /* UserDetailsCollectionViewCell.swift */,
+				F8AC112B22C7836600029AF5 /* ProfileHeaderView.swift */,
+				F8AC112922C7835300029AF5 /* StreachyProfileHeaderLayout.swift */,
+				F8AC112722C7834100029AF5 /* ProfileViewController.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		F8AC112F22C783B700029AF5 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC113022C783E300029AF5 /* Ext-UIImageView.swift */,
+				F8AC113222C784C900029AF5 /* Ext-UIViewController.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		F8AC113422C785FF00029AF5 /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				F8AC111F22C7593300029AF5 /* ApiManager.swift */,
+			);
+			path = ApiManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,13 +320,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8AC110522C74F9E00029AF5 /* ViewController.swift in Sources */,
+				F8AC112A22C7835300029AF5 /* StreachyProfileHeaderLayout.swift in Sources */,
 				F8AC110322C74F9E00029AF5 /* AppDelegate.swift in Sources */,
+				F8AC113122C783E300029AF5 /* Ext-UIImageView.swift in Sources */,
 				F8AC112422C75A1100029AF5 /* ApiConstants.swift in Sources */,
 				F8AC112622C75A5100029AF5 /* StringConstants.swift in Sources */,
 				F8AC112022C7593300029AF5 /* ApiManager.swift in Sources */,
 				F8AC111A22C754A700029AF5 /* UserDetailsCollectionViewCell.swift in Sources */,
+				F8AC112C22C7836700029AF5 /* ProfileHeaderView.swift in Sources */,
+				F8AC112822C7834100029AF5 /* ProfileViewController.swift in Sources */,
 				F8AC111822C7549700029AF5 /* LoginViewController.swift in Sources */,
+				F8AC113322C784C900029AF5 /* Ext-UIViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
