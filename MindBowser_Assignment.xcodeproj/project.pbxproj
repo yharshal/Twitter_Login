@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E82D22897030080E03C3EFA6 /* Pods_MindBowser_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2351088DF2D4FBB66DF5A97A /* Pods_MindBowser_Assignment.framework */; };
 		F8AC110322C74F9E00029AF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC110222C74F9D00029AF5 /* AppDelegate.swift */; };
 		F8AC110522C74F9E00029AF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC110422C74F9E00029AF5 /* ViewController.swift */; };
 		F8AC110D22C74F9F00029AF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8AC110B22C74F9F00029AF5 /* LaunchScreen.storyboard */; };
@@ -20,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2351088DF2D4FBB66DF5A97A /* Pods_MindBowser_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindBowser_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D6F44C88FED3216DCD18701 /* Pods-MindBowser_Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindBowser_Assignment.release.xcconfig"; path = "Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment.release.xcconfig"; sourceTree = "<group>"; };
+		99B68F0B640A0FDB08E64CA8 /* Pods-MindBowser_Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindBowser_Assignment.debug.xcconfig"; path = "Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment.debug.xcconfig"; sourceTree = "<group>"; };
 		F8AC10FF22C74F9D00029AF5 /* MindBowser_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindBowser_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AC110222C74F9D00029AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8AC110422C74F9E00029AF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E82D22897030080E03C3EFA6 /* Pods_MindBowser_Assignment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53BBC080F3A067AF2660BF8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2351088DF2D4FBB66DF5A97A /* Pods_MindBowser_Assignment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F672B998BDB8CBE2470BD48F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				99B68F0B640A0FDB08E64CA8 /* Pods-MindBowser_Assignment.debug.xcconfig */,
+				8D6F44C88FED3216DCD18701 /* Pods-MindBowser_Assignment.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F8AC10F622C74F9D00029AF5 = {
 			isa = PBXGroup;
 			children = (
 				F8AC110122C74F9D00029AF5 /* MindBowser_Assignment */,
 				F8AC110022C74F9D00029AF5 /* Products */,
+				F672B998BDB8CBE2470BD48F /* Pods */,
+				53BBC080F3A067AF2660BF8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,9 +151,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F8AC111122C74F9F00029AF5 /* Build configuration list for PBXNativeTarget "MindBowser_Assignment" */;
 			buildPhases = (
+				01DCC35A33F3E58DFA742F9B /* [CP] Check Pods Manifest.lock */,
 				F8AC10FB22C74F9D00029AF5 /* Sources */,
 				F8AC10FC22C74F9D00029AF5 /* Frameworks */,
 				F8AC10FD22C74F9D00029AF5 /* Resources */,
+				7C37CE8515C20C483428806E /* [CP] Embed Pods Frameworks */,
+				8899503D0DB8D32EA6890F8E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,6 +212,65 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		01DCC35A33F3E58DFA742F9B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MindBowser_Assignment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C37CE8515C20C483428806E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8899503D0DB8D32EA6890F8E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F8AC10FB22C74F9D00029AF5 /* Sources */ = {
@@ -332,6 +419,7 @@
 		};
 		F8AC111222C74F9F00029AF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99B68F0B640A0FDB08E64CA8 /* Pods-MindBowser_Assignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -351,6 +439,7 @@
 		};
 		F8AC111322C74F9F00029AF5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D6F44C88FED3216DCD18701 /* Pods-MindBowser_Assignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
