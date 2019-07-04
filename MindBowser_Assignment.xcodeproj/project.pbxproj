@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E82D22897030080E03C3EFA6 /* Pods_MindBowser_Assignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2351088DF2D4FBB66DF5A97A /* Pods_MindBowser_Assignment.framework */; };
+		F8271A8F22CE773B00860C18 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8271A8E22CE773B00860C18 /* TwitterClient.swift */; };
 		F8AC110322C74F9E00029AF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC110222C74F9D00029AF5 /* AppDelegate.swift */; };
 		F8AC110D22C74F9F00029AF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8AC110B22C74F9F00029AF5 /* LaunchScreen.storyboard */; };
 		F8AC111822C7549700029AF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC111722C7549700029AF5 /* LoginViewController.swift */; };
@@ -28,6 +29,8 @@
 		2351088DF2D4FBB66DF5A97A /* Pods_MindBowser_Assignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MindBowser_Assignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D6F44C88FED3216DCD18701 /* Pods-MindBowser_Assignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindBowser_Assignment.release.xcconfig"; path = "Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment.release.xcconfig"; sourceTree = "<group>"; };
 		99B68F0B640A0FDB08E64CA8 /* Pods-MindBowser_Assignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MindBowser_Assignment.debug.xcconfig"; path = "Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment.debug.xcconfig"; sourceTree = "<group>"; };
+		F8271A8B22CE730C00860C18 /* MindBowser_Assignment-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MindBowser_Assignment-Bridging-Header.h"; sourceTree = "<group>"; };
+		F8271A8E22CE773B00860C18 /* TwitterClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
 		F8AC10FF22C74F9D00029AF5 /* MindBowser_Assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MindBowser_Assignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8AC110222C74F9D00029AF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8AC110C22C74F9F00029AF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -104,6 +107,7 @@
 				F8AC110B22C74F9F00029AF5 /* LaunchScreen.storyboard */,
 				F8AC111D22C7550A00029AF5 /* Assets.xcassets */,
 				F8AC110E22C74F9F00029AF5 /* Info.plist */,
+				F8271A8B22CE730C00860C18 /* MindBowser_Assignment-Bridging-Header.h */,
 			);
 			path = MindBowser_Assignment;
 			sourceTree = "<group>";
@@ -182,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				F8AC111F22C7593300029AF5 /* ApiManager.swift */,
+				F8271A8E22CE773B00860C18 /* TwitterClient.swift */,
 			);
 			path = ApiManager;
 			sourceTree = "<group>";
@@ -215,7 +220,6 @@
 				F8AC10FC22C74F9D00029AF5 /* Frameworks */,
 				F8AC10FD22C74F9D00029AF5 /* Resources */,
 				7C37CE8515C20C483428806E /* [CP] Embed Pods Frameworks */,
-				8899503D0DB8D32EA6890F8E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,6 +242,7 @@
 				TargetAttributes = {
 					F8AC10FE22C74F9D00029AF5 = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -312,23 +317,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8899503D0DB8D32EA6890F8E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -340,6 +328,7 @@
 				F8AC110322C74F9E00029AF5 /* AppDelegate.swift in Sources */,
 				F8AC113122C783E300029AF5 /* Ext-UIImageView.swift in Sources */,
 				F8AC112422C75A1100029AF5 /* ApiConstants.swift in Sources */,
+				F8271A8F22CE773B00860C18 /* TwitterClient.swift in Sources */,
 				F8AC112622C75A5100029AF5 /* StringConstants.swift in Sources */,
 				F8AC112022C7593300029AF5 /* ApiManager.swift in Sources */,
 				F8AC111A22C754A700029AF5 /* UserDetailsCollectionViewCell.swift in Sources */,
@@ -485,6 +474,7 @@
 			baseConfigurationReference = 99B68F0B640A0FDB08E64CA8 /* Pods-MindBowser_Assignment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7YNKRE29SD;
 				INFOPLIST_FILE = MindBowser_Assignment/Info.plist;
@@ -495,6 +485,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rex.com.MindBowser-Assignment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MindBowser_Assignment/MindBowser_Assignment-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -505,6 +497,7 @@
 			baseConfigurationReference = 8D6F44C88FED3216DCD18701 /* Pods-MindBowser_Assignment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7YNKRE29SD;
 				INFOPLIST_FILE = MindBowser_Assignment/Info.plist;
@@ -515,6 +508,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rex.com.MindBowser-Assignment";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MindBowser_Assignment/MindBowser_Assignment-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

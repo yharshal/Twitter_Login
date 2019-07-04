@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TwitterKit
 
 
 struct UserDetails {
@@ -24,7 +23,6 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var collectionVIew: UICollectionView!
     
     var userID: String?
-    var session: TWTRSession!
     var userDetails: UserDetails?
     
     override func viewDidLoad() {
@@ -37,14 +35,9 @@ class ProfileViewController: UIViewController {
         self.getUserInfo()
     }
     
-    
-    
-    
     fileprivate func getUserInfo() {
         self.userDetails = UserDetails()
-        
     }
-    
     
     func refreshView() {
         DispatchQueue.main.async {

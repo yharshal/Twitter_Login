@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TwitterKit
 
 class LoginViewController: UIViewController {
     
@@ -18,12 +17,13 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func btnTwitterLoginTapped(_ sender: UIButton) {
-        TWTRTwitter.sharedInstance().logIn { (session, error) in
-            if let err = error {
-                self.showMessage("Login Failed", err.localizedDescription)
-            } else {
-                self.getAccessToken()
-            }
+        TwitterClient.shared.requestSerializer.removeAccessToken()
+        TwitterClient.shared.fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: URL(string: "https://www.codepath.com"), scope: nil, success: { (creds: BDBOAuth1Credential!) in
+            print(creds.token!)
+            let authorizeURL = URL(string:"https://api.twitter.com/oauth/authorize?oauth_token=\(String(describing: creds!.token!))")
+            UIApplication.shared.open(authorizeURL!, options: [:], completionHandler: nil)
+        }) { (error: Error!) in
+            print(error.localizedDescription)
         }
     }
     
