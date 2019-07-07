@@ -23,6 +23,9 @@
 		F8AC112C22C7836700029AF5 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC112B22C7836600029AF5 /* ProfileHeaderView.swift */; };
 		F8AC113122C783E300029AF5 /* Ext-UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC113022C783E300029AF5 /* Ext-UIImageView.swift */; };
 		F8AC113322C784C900029AF5 /* Ext-UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC113222C784C900029AF5 /* Ext-UIViewController.swift */; };
+		F8AF901A22D25761002FD967 /* Ext-UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AF901922D25761002FD967 /* Ext-UIView.swift */; };
+		F8AF901C22D26AE9002FD967 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AF901B22D26AE9002FD967 /* FriendsViewController.swift */; };
+		F8AF901E22D26B3B002FD967 /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AF901D22D26B3B002FD967 /* FriendsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +50,9 @@
 		F8AC112B22C7836600029AF5 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		F8AC113022C783E300029AF5 /* Ext-UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-UIImageView.swift"; sourceTree = "<group>"; };
 		F8AC113222C784C900029AF5 /* Ext-UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-UIViewController.swift"; sourceTree = "<group>"; };
+		F8AF901922D25761002FD967 /* Ext-UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext-UIView.swift"; sourceTree = "<group>"; };
+		F8AF901B22D26AE9002FD967 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		F8AF901D22D26B3B002FD967 /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +130,8 @@
 			children = (
 				F8AC112D22C7837300029AF5 /* Login */,
 				F8AC112E22C7838B00029AF5 /* UserProfile */,
+				F8AF901B22D26AE9002FD967 /* FriendsViewController.swift */,
+				F8AF901D22D26B3B002FD967 /* FriendsTableViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 			children = (
 				F8AC113022C783E300029AF5 /* Ext-UIImageView.swift */,
 				F8AC113222C784C900029AF5 /* Ext-UIViewController.swift */,
+				F8AF901922D25761002FD967 /* Ext-UIView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -220,6 +229,7 @@
 				F8AC10FC22C74F9D00029AF5 /* Frameworks */,
 				F8AC10FD22C74F9D00029AF5 /* Resources */,
 				7C37CE8515C20C483428806E /* [CP] Embed Pods Frameworks */,
+				2A7B7852FDCDF450A6CD4913 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -300,6 +310,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2A7B7852FDCDF450A6CD4913 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MindBowser_Assignment/Pods-MindBowser_Assignment-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7C37CE8515C20C483428806E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,8 +354,11 @@
 				F8AC112A22C7835300029AF5 /* StreachyProfileHeaderLayout.swift in Sources */,
 				F8AC110322C74F9E00029AF5 /* AppDelegate.swift in Sources */,
 				F8AC113122C783E300029AF5 /* Ext-UIImageView.swift in Sources */,
+				F8AF901E22D26B3B002FD967 /* FriendsTableViewCell.swift in Sources */,
 				F8AC112422C75A1100029AF5 /* ApiConstants.swift in Sources */,
+				F8AF901C22D26AE9002FD967 /* FriendsViewController.swift in Sources */,
 				F8271A8F22CE773B00860C18 /* TwitterClient.swift in Sources */,
+				F8AF901A22D25761002FD967 /* Ext-UIView.swift in Sources */,
 				F8AC112622C75A5100029AF5 /* StringConstants.swift in Sources */,
 				F8AC112022C7593300029AF5 /* ApiManager.swift in Sources */,
 				F8AC111A22C754A700029AF5 /* UserDetailsCollectionViewCell.swift in Sources */,

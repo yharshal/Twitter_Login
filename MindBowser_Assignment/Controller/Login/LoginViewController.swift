@@ -7,51 +7,71 @@
 //
 
 import UIKit
+import TwitterKit
 
 class LoginViewController: UIViewController {
     
     @IBOutlet weak var btnLogin: UIButton!
+    var name = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     @IBAction func btnTwitterLoginTapped(_ sender: UIButton) {
-        TwitterClient.shared.requestSerializer.removeAccessToken()
-        TwitterClient.shared.fetchRequestToken(withPath: "oauth/request_token", method: "GET", callbackURL: URL(string: "https://www.codepath.com"), scope: nil, success: { (creds: BDBOAuth1Credential!) in
-            print(creds.token!)
-            let authorizeURL = URL(string:"https://api.twitter.com/oauth/authorize?oauth_token=\(String(describing: creds!.token!))")
-            UIApplication.shared.open(authorizeURL!, options: [:], completionHandler: nil)
-        }) { (error: Error!) in
-            print(error.localizedDescription)
+        TWTRTwitter.sharedInstance().logIn { (session, error) in
+            if error != nil {
+                if let err = error {
+                    print(err.localizedDescription)
+                }
+            } else {
+                if let loginSession = session{
+                    UserDefaults.standard.set(loginSession.authToken, forKey: "AuthToken")
+                    UserDefaults.standard.synchronize()
+                    self.getEmailid(loginSession)
+                }
+            }
         }
     }
     
-    func getAccessToken() {
-        ApiManager.shared.getAccessToken(with: { (statusCode, data) in
-            if statusCode == 200 {
-                if let data = data {
-                    do
-                    {
-                        let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String: Any]
-                        print("-----Access Token JSON::- -------\n",json)
-                        if let accessTokenType = json["token_type"] as? String, let accessToken = json["access_token"] as? String {
-                            UserDefaults.standard.set("\(accessTokenType) \(accessToken)", forKey: StringConstants.kAccessTokenKey)
-                            UserDefaults.standard.synchronize()
-                            let profile = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-                            self.navigationController?.pushViewController(profile, animated: true)
-                        }
-                    } catch {
-                        self.showMessage("Login Failed", error.localizedDescription)
-                    }
+    fileprivate func getEmailid(_ loginSession: TWTRSession)  {
+        let client = TWTRAPIClient.withCurrentUser()
+        client.requestEmail { email, error in
+            if (error != nil) {
+                print(error!.localizedDescription)
+            } else {
+                UserDefaults.standard.set(loginSession.userID, forKey: "userid")
+                UserDefaults.standard.set(loginSession.userName, forKey: "userName")
+                self.name = loginSession.userName
+                UserDefaults.standard.set(email!, forKey: "email")
+                UserDefaults.standard.synchronize()
+                self.getUserDetails(withId: loginSession.userID)
+            }
+        }
+    }
+    
+    fileprivate func getUserDetails(withId id: String) {
+        let client = TWTRAPIClient(userID: id)
+        client.loadUser(withID: id, completion: { (user, error) in
+            if error != nil {
+                if let err = error {
+                    print(err.localizedDescription)
                 }
             } else {
-                self.showMessage("Login Failed", "Failed with status code::- \(statusCode!)")
+                if let userData = user {
+                    UserDefaults.standard.set(userData.profileImageLargeURL, forKey: "profilePic")
+                    UserDefaults.standard.synchronize()
+                    self.navigateToProfile()
+                }
             }
-        }) { (errorString) in
-            print(errorString!)
-            self.showMessage("Login Failed", "Failed with status error::- \(errorString!)")
-        }
+        })
+    }
+    
+    fileprivate func navigateToProfile() {
+        let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
+        profileVC.navigationItem.title = self.name
+        self.navigationController?.pushViewController(profileVC, animated: true)
     }
     
 }

@@ -6,7 +6,7 @@ target 'MindBowser_Assignment' do
   use_frameworks!
 
   # Pods for MindBowser_Assignment
-  #pod 'TwitterKit'
-  pod 'Alamofire'
-  pod 'BDBOAuth1Manager', '~> 1.5.0'
+  pod 'TwitterKit'
+  #  pod 'Alamofire'
+  #  pod 'BDBOAuth1Manager', '~> 1.5.0'
 end

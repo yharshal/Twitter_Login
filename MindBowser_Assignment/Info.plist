@@ -21,19 +21,11 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>twitterkit-Sh4JYw4aQ773emLJTL9zlFFF2</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLName</key>
-			<string>com.rex.com.MindBowser-Assignment</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>https://www.codepath.com</string>
 			</array>
 		</dict>
 	</array>
