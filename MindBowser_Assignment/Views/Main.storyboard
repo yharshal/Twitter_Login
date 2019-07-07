@@ -180,6 +180,9 @@
                                             <constraint firstItem="9mv-jj-Les" firstAttribute="leading" secondItem="XJt-eM-E9B" secondAttribute="leading" id="QvD-dJ-f34"/>
                                             <constraint firstAttribute="bottom" secondItem="9mv-jj-Les" secondAttribute="bottom" id="jxc-cb-KiQ"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imgTweet" destination="PWJ-TZ-iXI" id="drT-n0-gnA"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileHeaderView" id="FhH-GC-QE5" customClass="ProfileHeaderView" customModule="MindBowser_Assignment" customModuleProvider="target">

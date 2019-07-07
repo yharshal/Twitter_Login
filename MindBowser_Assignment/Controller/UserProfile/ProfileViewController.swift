@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController {
     
     var userID: String?
     var userDetails = [String: Any]()
+    var tweets = [[String: Any]]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,10 +40,9 @@ class ProfileViewController: UIViewController {
             } else {
                 do{
                     let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [String: Any]
-                    print(json)
                     self.userDetails = json
                     DispatchQueue.main.async {
-                        self.refreshView()
+                        self.getTweets()
                     }
                 } catch let jsonError {
                     print(jsonError)
@@ -51,6 +51,25 @@ class ProfileViewController: UIViewController {
         }
     }
     
+    func getTweets() {
+        let urlString = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=twitterapi&count=20"
+        var clientError : NSError?
+        let client = TWTRAPIClient()
+        let req = client.urlRequest(withMethod: "GET", urlString: urlString, parameters: nil, error: &clientError)
+        client.sendTwitterRequest(req) { (response, data, error) in
+            if error != nil{
+                print(error!.localizedDescription)
+            } else {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! [[String: Any]]
+                    self.tweets = json
+                    self.refreshView()
+                } catch let jsonError {
+                    print(jsonError)
+                }
+            }
+        }
+    }
     
     func refreshView() {
         DispatchQueue.main.async {
@@ -64,18 +83,29 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func btnFriendsTapped(_ sender: Any) {
-        let friendsVC = self.storyboard?.instantiateViewController(withIdentifier: "FriendsViewController") as! FriendsViewController
-        self.navigationController?.pushViewController(friendsVC, animated: true)
+
     }
     
 }
 
 extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 0
+        return tweets.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: UserDetailsCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserDetailsCollectionViewCell", for: indexPath) as! UserDetailsCollectionViewCell
+        let tweet = tweets[indexPath.row]
+        if let user = tweet["user"] as? [String: Any]{
+            if let name = user["name"] as? String{
+                cell.lblName.text = name
+            }
+            if let descr = user["description"] as? String{
+                cell.lblDesc.text = descr
+            }
+            if let url = user["profile_image_url_https"] as? String{
+                cell.imgTweet.dowloadFromServer(link: url)
+            }
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {

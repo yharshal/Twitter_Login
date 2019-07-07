@@ -62,16 +62,10 @@ class LoginViewController: UIViewController {
                 if let userData = user {
                     UserDefaults.standard.set(userData.profileImageLargeURL, forKey: "profilePic")
                     UserDefaults.standard.synchronize()
-                    self.navigateToProfile()
+                    AppDelegate.shared().setRootVC()
                 }
             }
         })
-    }
-    
-    fileprivate func navigateToProfile() {
-        let profileVC = self.storyboard?.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
-        profileVC.navigationItem.title = self.name
-        self.navigationController?.pushViewController(profileVC, animated: true)
     }
     
 }

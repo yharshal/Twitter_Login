@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         TWTRTwitter.sharedInstance().start(withConsumerKey: StringConstants.kConsumerKey, consumerSecret: StringConstants.kConsumerSecret)
-//        goToLoginPage()
+        setRootVC()
         return true
     }
     
-    fileprivate func goToLoginPage() {
+    func setRootVC() {
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         if let _ = UserDefaults.standard.value(forKey: "userid") as? String, let name = UserDefaults.standard.value(forKey: "userName") as? String {
             let profileVC = mainStoryBoard.instantiateViewController(withIdentifier: "ProfileViewController") as! ProfileViewController
@@ -57,6 +57,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    class func shared() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return TWTRTwitter.sharedInstance().application(app, open: url, options: options)
