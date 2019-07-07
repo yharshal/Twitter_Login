@@ -7,6 +7,4 @@ target 'MindBowser_Assignment' do
 
   # Pods for MindBowser_Assignment
   pod 'TwitterKit'
-  #  pod 'Alamofire'
-  #  pod 'BDBOAuth1Manager', '~> 1.5.0'
 end

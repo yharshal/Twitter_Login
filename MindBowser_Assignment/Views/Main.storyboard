@@ -182,6 +182,8 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="imgTweet" destination="PWJ-TZ-iXI" id="drT-n0-gnA"/>
+                                            <outlet property="lblDesc" destination="CqJ-8O-5Su" id="wUH-G9-arT"/>
+                                            <outlet property="lblName" destination="kW8-Ex-3ji" id="Erc-ZD-ZrW"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
